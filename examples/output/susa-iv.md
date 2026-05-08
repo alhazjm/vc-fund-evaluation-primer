@@ -1,6 +1,6 @@
 # VC fund evaluation primer — Susa Ventures IV & Susa Opportunities II
 
-> **Note.** This is a verbatim run of the v1 Skill against the Susa deck (Q1 2021). v2 of the Skill adds explicit staleness handling and a reading-guide / audit-JSON header treatment; substantive findings should be unchanged on a re-run. Source deck: [Google Drive link](https://drive.google.com/file/d/1WZnQYPIVY6L_Vqe1-1eJBMdv0dLpQX2q/view).
+> **Note.** This is a verbatim run of the v1 Skill against the Susa deck (Q1 2021). Source deck: [Google Drive link](https://drive.google.com/file/d/1WZnQYPIVY6L_Vqe1-1eJBMdv0dLpQX2q/view).
 
 ## 1. Can we trust this team?
 

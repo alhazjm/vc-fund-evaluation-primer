@@ -40,7 +40,7 @@ This split is deliberate. A pure-Skill artifact stays deterministic and inspecta
 
 ## How to invoke
 
-1. Zip this repo with the repo folder as the ZIP root — `SKILL.md` should sit at `<zip-root>/SKILL.md`, **not** `<zip-root>/<some-folder>/SKILL.md`. The most common installation error is one level of nesting.
+1. Zip this repo with the repo folder as the ZIP root — `SKILL.md` should sit at `<zip-root>/SKILL.md`, **not** `<zip-root>/<some-folder>/SKILL.md`.
 2. Upload the ZIP via Claude Desktop (Settings → Skills → Add custom skill).
 3. Open a new conversation, attach the fund deck PDF, optionally attach an LP letter, optionally paste website content. Invoke the Skill.
 4. Output: memo + gap list + JSON in a single response.
@@ -55,19 +55,13 @@ The Skill loads to `~/.claude/skills/vc-fund-evaluation-primer/SKILL.md`. `frame
 
 **Output:** [`examples/output/susa-iv.md`](examples/output/susa-iv.md)
 
-**Why this fund.** Susa was a deliberately stale pick — the deck is dated Q1 2021, so it tests whether the Skill's deck-only reasoning holds up against a 5-year-old document where the world has moved (Robinhood IPO'd July 2021; Flexport restructured 2022–2023). The result is the strongest validation of the Skill's design philosophy: catch what's stale, flag it for verification, don't pretend to verify.
+**Source deck:** [Google Drive link](https://drive.google.com/file/d/1Jhpbz95IfFE8iyVMS7oAvIYC0OtBtVlE/view)
 
-**What the run validates.**
-
-- **Footnote-level reading.** Caught the slide-10 footnote that the "Top 1%" Susa I claim relies on Robinhood / Flexport secondary market prices.
-- **Redacted-metrics handling.** Flagged that every track-record metric (MOIC, TVPI, DPI, Gross / Net IRR) is redacted and demanded the unredacted set per fund separately.
-- **Pure-reasoning passes.** Identified the back-tested Opp-Fund analysis on slides 25–26 as selection-on-the-dependent-variable — no external data needed.
-- **Cross-input consistency.** The `consistency_flags` pass surfaced the slide-17-vs-slide-21 portfolio-count mismatch.
-- **Conversational sub-criteria.** Marked `consistency`, `risk_acceptance`, and parts of `founder_relationships` as `"not present"` and routed them to the gap list as call topics.
+**Output:** [`examples/output/precursor-iii.md`](examples/output/precursor-iii.md)
 
 **What it explicitly defers to the agent layer.**
 
-- Verification of named portfolio companies' current state (Robinhood / Flexport / Stord / Viz.ai outcomes).
+- Verification of named portfolio companies' current state.
 - Realised vs marked-up returns reconciliation against public exit data.
 - Post-deck restructuring or regulatory events.
 
@@ -81,19 +75,16 @@ The Skill is the deterministic core. [`roadmap.md`](roadmap.md) lays out the sys
 - **NEXT** — agent layer wrapping the Skill: 3 tools (website fetcher, portfolio-company resolver, GP track-record cross-check) + write-confirmation gate.
 - **LATER** — corrections-back-to-rubric loop, integration edges (Arch, SoftLedger, dbt), adjacent artifacts (post-call retrospective Skill, public-equity primer).
 
-Includes a Mermaid system diagram.
-
 ## Files
 
 - `SKILL.md` — system prompt with the six steps, schema spec, output format, guardrails. Required by the Skill loader.
 - `framework.md` — the 14-sub-criterion reference, used as the keys for the structured output. Loaded by `SKILL.md` at runtime.
 - `roadmap.md` — system view with Mermaid diagram and NOW / NEXT / LATER tier bullets.
-- `examples/output/susa-iv.md` — verbatim Skill output against a real (5-year-stale) fund deck.
+- `examples/output/...` — verbatim Skill outputs against real, public fund decks.
 - `README.md` — this file.
 
 ## Out of scope
 
-- PPTX input — convert to PDF first.
 - Multi-fund batch / comparison mode — single-fund happy path only.
 - Track-record verification, portfolio-company status checks, GP exit databases — agent-layer work.
 - Founder reference calls, post-decision retrospectives — judgment workflows, not the Skill's job.
