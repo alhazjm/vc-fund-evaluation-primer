@@ -55,17 +55,11 @@ The Skill loads to `~/.claude/skills/vc-fund-evaluation-primer/SKILL.md`. `frame
 
 **Output:** [`examples/output/susa-iv.md`](examples/output/susa-iv.md)
 
+### precursor-iii — Precursor Fund III (Q3 2020)
+
 **Source deck:** [Google Drive link](https://drive.google.com/file/d/1Jhpbz95IfFE8iyVMS7oAvIYC0OtBtVlE/view)
 
 **Output:** [`examples/output/precursor-iii.md`](examples/output/precursor-iii.md)
-
-**What it explicitly defers to the agent layer.**
-
-- Verification of named portfolio companies' current state.
-- Realised vs marked-up returns reconciliation against public exit data.
-- Post-deck restructuring or regulatory events.
-
-These belong in the NEXT tier — see [`roadmap.md`](roadmap.md).
 
 ## Roadmap
 
