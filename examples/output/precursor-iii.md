@@ -2,8 +2,6 @@
 
 > **Note.** This is a verbatim run of the v3 Skill against the Precursor deck (Q3 2020). Source deck: [Google Drive link](https://drive.google.com/file/d/1Jhpbz95IfFE8iyVMS7oAvIYC0OtBtVlE/view).
 
-Now I have the full skill instructions and framework. Let me work through the evaluation systematically.
-
 ## 1. Can we trust this team?
 
 Charles Hudson is the sole GP, with a credible background: Stanford BA and MBA, operating stints at Google and IronPort Systems, two founded companies, and prior investing at Uncork Capital (SoftTech VC) and In-Q-Tel (deck p.4). The team includes Sydney Thomas (Duke/Berkeley-Haas, operator at Naya Health, Kimberly Clark) and Ayanna Kerrison (Baruch College, finance background at Credit Suisse/BMO/Merrill Lynch) (deck p.5), though their investment decision-making authority is unclear.
